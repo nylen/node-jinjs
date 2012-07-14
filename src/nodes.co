@@ -466,6 +466,18 @@ class NodeElseFor extends NodeTagContainer
         return res
 
 
+class NodeAutoEscapeDummy extends NodeTagContainer
+    @tag = \autoescape
+    @until = \endautoescape
+
+    (specs) ->
+        super ...
+
+    compile: function (opts, ctx)
+        res = "#{@child_code opts, ctx}"
+        return res
+
+
 class NodeContinue extends NodeTag
     @tag = \continue
 
@@ -560,5 +572,6 @@ exports <<< {
         \continue : NodeContinue
         \break : NodeBreak
         \call : NodeCall
+        \autoescape : NodeAutoEscapeDummy
     }
 
