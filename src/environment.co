@@ -132,7 +132,7 @@ class BasicFileEnvironment extends Environment
             throw e
 
 exports import {
-    defaultEnvironment: new Environment filters: require("../lib/filters"), utils: require("../lib/utils")
+    defaultEnvironment: new Environment filters: require("./filters"), utils: require("./utils")
     Environment
     BasicFileEnvironment
     }
